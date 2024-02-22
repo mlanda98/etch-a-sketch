@@ -23,10 +23,12 @@ body{
   border-width: 1px;
   border-style: solid;
   box-sizing: border-box;
-  background: blue;;
+  background: white;
   width: 25px;
+  height: 25px;
   text-align: center;
-
   
+
+
 }
 
