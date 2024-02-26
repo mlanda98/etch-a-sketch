@@ -1,3 +1,12 @@
+const button = document.getElementById("button");
+
+function getInput(){
+let size = prompt("how many squares per side?");
+makeGrid(size);
+};
+
+button.addEventListener("click", getInput());
+
 function makeGrid(size){
 let grid = document.getElementById("grid");
 
@@ -11,7 +20,7 @@ for (let i = 0; i < size * size; i++){
 };
 };
 
-makeGrid(16);
+
 
 function addDrawing(e){
   e.target.style = "background: blue"
