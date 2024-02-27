@@ -3,8 +3,11 @@ body{
   padding: 0;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
+
+
 }
 
 .title{
@@ -12,23 +15,12 @@ body{
 }
 
 .grid{
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  margin: 2rem;
+  height: 400px;
   width: 400px;
+
   
 }
 
-.grid-item{
-  border-color: black;
-  border-width: 1px;
-  border-style: solid;
-  box-sizing: border-box;
-  background: white;
-  width: 25px;
-  height: 25px;
-  text-align: center;
-  
-
-
-}
 

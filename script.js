@@ -1,28 +1,41 @@
-const button = document.getElementById("button");
-
-function getInput(){
-let size = prompt("how many squares per side?");
-makeGrid(size);
-};
-
-button.addEventListener("click", getInput());
-
-function makeGrid(size){
+let button = document.getElementById("button");
 let grid = document.getElementById("grid");
 
-for (let i = 0; i < size * size; i++){
-  const div = document.createElement("div");
-  div.classList.add("grid-item");
-  
-  div.addEventListener("mouseover", addDrawing);
-  grid.appendChild(div);
+button.addEventListener("click", ()=>{
+  resetSize();
+});
 
+function resetSize(){
+  let size = prompt("how many squares per side? (1-100");
+  grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+  grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+  makeGrid(size);
 };
+
+function makeGrid(size){
+  grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+  grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+  grid.innerHTML = " ";
+
+  for (let i = 0; i < size * size; i++){
+    let div = document.createElement("div");
+    div.style.backgroundColor = "white";
+    div.textContent = i;
+    grid.appendChild(div);
+
+    div.addEventListener("mouseover", e=>{
+      div.style.backgroundColor = "blue";
+    
+    });
+
+    function clearGrid(){
+      button.addEventListener("click", e=>{
+        div.style.backgroundColor = "white";
+      });
+    }
+    clearGrid();
+  };
 };
 
+makeGrid(16);
 
-
-function addDrawing(e){
-  e.target.style = "background: blue"
-  e.target.removeEventListener("mouseover", addDrawing);
-}
