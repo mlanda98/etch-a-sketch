@@ -7,6 +7,9 @@ button.addEventListener("click", ()=>{
 
 function resetSize(){
   let size = prompt("how many squares per side? (1-100");
+  if (size > 100){
+    alert("input a number between 1-100");
+  }
   grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
   grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
   makeGrid(size);
