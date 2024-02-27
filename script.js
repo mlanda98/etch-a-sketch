@@ -23,7 +23,6 @@ function makeGrid(size){
   for (let i = 0; i < size * size; i++){
     let div = document.createElement("div");
     div.style.backgroundColor = "white";
-    div.textContent = i;
     grid.appendChild(div);
 
     div.addEventListener("mouseover", e=>{
